@@ -1,0 +1,9 @@
+BUILD
+?mbed
+compile_commands?json
+?clangd
+?cache
+LCD_DISCO_F746NG
+Blynk
+BSP_DISCO_F746NG
+mbed
