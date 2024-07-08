@@ -1,3 +1,5 @@
 ROOT=.
-TARGET=DISCO_F746NG
-TARGET_CODE=0815
+DEVICE_ID[/home/studio/workspace/cim_boot_recovery]=1010da34cc468fcdf15e04d228aaed54ae38
+DEVICE_TYPE[/home/studio/workspace/cim_boot_recovery]=connected
+TARGET=LPC1768
+TARGET_CODE=1010
