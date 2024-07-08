@@ -1,0 +1,28 @@
+#include "mbed.h"
+#include "TextLCD.h"
+#include <cstdio>
+ 
+I2C i2c_lcd(PB_7,PB_6); // SDA, SCL
+ 
+TextLCD_I2C lcd(&i2c_lcd, PCF8574_SA7, TextLCD::LCD20x4);  // I2C bus, PCF8574 Slaveaddress, LCD Type
+
+int main() {
+
+    lcd.cls();
+    lcd.locate(0, 0);
+    lcd.printf("Hello world!\n");
+    lcd.printf("01 23 45 67 AB CD EF");
+
+    
+// Show cursor as blinking character
+    lcd.setCursor(TextLCD::CurOff_BlkOn);
+    lcd.setBacklight(TextLCD::LightOn);
+ 
+// Set and show user defined characters. A maximum of 8 UDCs are supported by the HD44780.
+// They are defined by a 5x7 bitpattern. 
+    lcd.setUDC(0, (char *) udc_Bat_Hi);  // Show |>
+    lcd.putc(0);    
+    lcd.setUDC(1, (char *) udc_4);  // Show <|
+    lcd.putc(1);    
+
+}
